@@ -66,7 +66,6 @@ NobleBindings.prototype.onDescriptorsDiscover = function({ peripheralUuid, servi
 NobleBindings.prototype.onData = function({ peripheralUuid, serviceUuid, characteristicUuid, data, isNotification }) {
   var processedData = new Buffer(data, 'base64');
   this.emit('data', peripheralUuid, serviceUuid, characteristicUuid, processedData, isNotification);
-  this.emit('read', peripheralUuid, serviceUuid, characteristicUuid, processedData, isNotification);
 };
 
 NobleBindings.prototype.onWrite = function({ peripheralUuid, serviceUuid, characteristicUuid }) {
